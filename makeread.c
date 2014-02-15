@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Tue Feb  4 21:42:20 2014 david tran
-** Last update Mon Feb 10 14:20:01 2014 david tran
+** Last update Sat Feb 15 21:51:55 2014 david tran
 */
 
 #include "list.h"
@@ -32,9 +32,9 @@ void			keyreads(int buffer, t_struct *vals, t_booly *booh,
   struct termios	t;
 
   if (buffer == 4414235)
-    goright(vals, booh, j);
+    goright(*vals, booh, j);
   else if (buffer == 4479771)
-    goleft(vals, booh, j);
+    goleft(*vals, booh, j);
   else if (buffer == 27)
     {
       tcgetattr(0, &t);
@@ -46,11 +46,11 @@ void			keyreads(int buffer, t_struct *vals, t_booly *booh,
   else if (buffer == 10)
     pressenter(vals, booh);
   else if (buffer == 32)
-    pressspace(vals, booh, j);
+    pressspace(*vals, booh, j);
   else if (buffer == 4348699)
-    pressup(vals, booh, j);
+    pressup(*vals, booh, j);
   else if (buffer == 4283163)
-    pressdown(vals, booh, j);
+    pressdown(*vals, booh, j);
   else if (buffer == 114)
     refreshall(vals, booh, j);
 }

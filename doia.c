@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Thu Feb  6 16:06:15 2014 david tran
-** Last update Sat Feb 15 12:46:24 2014 david tran
+** Last update Sat Feb 15 22:01:29 2014 david tran
 */
 
 #include "list.h"
@@ -116,6 +116,7 @@ void	finalizeia(t_struct *vals, t_booly *booh, int line)
 	  i++;
 	}
     }
+  vals->pars = 0;
   iffinalia(vals, booh);
 }
 

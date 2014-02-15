@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Wed Feb  5 21:16:06 2014 david tran
-** Last update Sat Feb 15 12:46:06 2014 david tran
+** Last update Sat Feb 15 21:56:51 2014 david tran
 */
 
 #include "list.h"
@@ -51,8 +51,8 @@ int	checkok(t_struct vals, t_booly *booh, int *j)
 	{
 	  if (booh[i].bolly == 1)
 	    {
-	      calccoord(&w, &y, &vals, &i);
-	      calccoord(&x, &z, &vals, j);
+	      calccoord(&w, &y, vals, &i);
+	      calccoord(&x, &z, vals, j);
 	      if (y == z && w == x)
 		return (2);
 	      else if (y == z)
@@ -82,60 +82,60 @@ int	checkfinal(t_struct vals, t_booly *booh)
   return (y);
 }
 
-void	pressup(t_struct *vals, t_booly *booh, int *j)
+void	pressup(t_struct vals, t_booly *booh, int *j)
 {
   int	x;
   int	y;
 
   calccoord(&x, &y, vals, j);
-  tputs(tgoto(vals->tget->movecurs, x, y), 1, my_putchar);
+  tputs(tgoto(vals.tget->movecurs, x, y), 1, my_putchar);
   if (booh[*j].status == 1)
     {
       if (booh[*j].bolly == 0)
 	my_putchar('|');
     }
-  *j = *j + (vals->may * 2 + 1);
-  if (*j > ((vals->may + 1) * (vals->may * 2 + 1) - 1))
+  *j = *j + (vals.may * 2 + 1);
+  if (*j > ((vals.may + 1) * (vals.may * 2 + 1) - 1))
     *j = 0;
   while (booh[*j].status == 0)
     {
-      if (*j > ((vals->may + 1) * (vals->may * 2 + 1) - 1))
+      if (*j > ((vals.may + 1) * (vals.may * 2 + 1) - 1))
 	*j = 0;
       *j = *j + 1;
     }
   calccoord(&x, &y, vals, j);
-  tputs(tgoto(vals->tget->movecurs, x, y), 1, my_putchar);
-  tputs(vals->tget->underline, 1, my_putchar);
+  tputs(tgoto(vals.tget->movecurs, x, y), 1, my_putchar);
+  tputs(vals.tget->underline, 1, my_putchar);
   if (booh[*j].bolly == 0)
     my_putchar('|');
-  tputs(vals->tget->endunder, 1, my_putchar);
+  tputs(vals.tget->endunder, 1, my_putchar);
 }
 
-void	pressdown(t_struct *vals, t_booly *booh, int *j)
+void	pressdown(t_struct vals, t_booly *booh, int *j)
 {
   int	x;
   int	y;
 
   calccoord(&x, &y, vals, j);
-  tputs(tgoto(vals->tget->movecurs, x, y), 1, my_putchar);
+  tputs(tgoto(vals.tget->movecurs, x, y), 1, my_putchar);
   if (booh[*j].status == 1)
     {
       if (booh[*j].bolly == 0)
 	my_putchar('|');
     }
-  *j = *j - (vals->may * 2 + 1);
+  *j = *j - (vals.may * 2 + 1);
   if (*j < 0)
-    *j = (vals->may + 1) * (vals->may * 2 + 1) - 1;
+    *j = (vals.may + 1) * (vals.may * 2 + 1) - 1;
   while (booh[*j].status == 0)
     {
       if (*j == 0)
-	*j = (vals->may + 1) * (vals->may * 2 + 1) - 1;
+	*j = (vals.may + 1) * (vals.may * 2 + 1) - 1;
       *j = *j - 1;
     }
   calccoord(&x, &y, vals, j);
-  tputs(tgoto(vals->tget->movecurs, x, y), 1, my_putchar);
-  tputs(vals->tget->underline, 1, my_putchar);
+  tputs(tgoto(vals.tget->movecurs, x, y), 1, my_putchar);
+  tputs(vals.tget->underline, 1, my_putchar);
   if (booh[*j].bolly == 0)
     my_putchar('|');
-  tputs(vals->tget->endunder, 1, my_putchar);
+  tputs(vals.tget->endunder, 1, my_putchar);
 }
