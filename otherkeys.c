@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Wed Feb  5 21:16:06 2014 david tran
-** Last update Tue Feb 11 13:35:38 2014 david tran
+** Last update Sat Feb 15 12:46:06 2014 david tran
 */
 
 #include "list.h"
@@ -18,7 +18,7 @@ void			iffinaldo(t_struct vals, t_booly *booh)
   if ((x = checkfinal(vals, booh)) == 0)
     {
       tcgetattr(0, &t);
-      my_putstr("-----------YOU LOOSE-----------\n");
+      my_putstr("-----------YOU LOST-----------\n");
       free(booh);
       tputs(vals.tget->endhide, 1, my_putchar);
       get_back(&t);
@@ -27,7 +27,7 @@ void			iffinaldo(t_struct vals, t_booly *booh)
   else if (x == 1)
     {
       tcgetattr(0, &t);
-      my_putstr("-----------CPU LOOSE-----------\n");
+      my_putstr("-----------CPU LOST-----------\n");
       free(booh);
       tputs(vals.tget->endhide, 1, my_putchar);
       get_back(&t);

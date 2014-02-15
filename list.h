@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Fri Jan 31 10:43:16 2014 david tran
-** Last update Tue Feb 11 13:33:57 2014 david tran
+** Last update Sat Feb 15 12:42:04 2014 david tran
 */
 
 #ifndef _LIST_H_
@@ -92,5 +92,6 @@ void			refreshall(t_struct *, t_booly *, int *);
 void			fillstruct(t_struct *);
 void			checkwinsize(t_struct *);
 void			affturn(t_struct );
+void			prefinalize(t_struct *, t_booly *, int , int );
 
 #endif /* !_LIST_H_ */

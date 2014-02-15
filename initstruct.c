@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Sun Feb  2 14:22:44 2014 david tran
-** Last update Mon Feb 10 13:47:04 2014 david tran
+** Last update Sat Feb 15 12:46:17 2014 david tran
 */
 
 #include "list.h"
@@ -56,7 +56,7 @@ void	gorange(t_struct *vals, char **av)
   vals->max = (vals->may + 1) * (vals->may + vals->may + 1);
   if (vals->max == 1 || vals->max == 1)
     {
-      my_putstr("--------------YOU LOOSE---------------\n");
+      my_putstr("--------------YOU LOST---------------\n");
       exit(1);
     }
   vals->midd = (vals->may * 2) / 2;
@@ -77,14 +77,14 @@ void	gonumb(t_struct *vals, char **av)
   vals->max = my_getnbr(av[2]) - 1;
   if (vals->max == 0 || vals->max == -1)
     {
-      my_putstr("--------------YOU LOOSE---------------\n");
+      my_putstr("--------------YOU LOST---------------\n");
       exit(1);
     }
   vals->may = calclines(vals) - 1;
   if (vals->may >vals->max)
     {
       my_putstr("Too much lines for alllums \n");
-      my_putstr("--------------YOU LOOSE---------------\n");
+      my_putstr("--------------YOU LOST---------------\n");
       exit(1);
     }
   vals->midd = (vals->may * 2) / 2;

@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Thu Feb  6 16:06:15 2014 david tran
-** Last update Tue Feb 11 13:38:17 2014 david tran
+** Last update Sat Feb 15 12:46:24 2014 david tran
 */
 
 #include "list.h"
@@ -85,8 +85,7 @@ void	execia(t_struct *vals, t_booly *booh, int count)
 	    i++;
 	  if (i == vals->x)
 	    {
-	      vals->y = count;
-	      finalizeia(vals, booh, mult);
+	      prefinalize(vals, booh, count, mult);
 	      return ;
 	    }
 	  j++;
@@ -130,7 +129,7 @@ void			iffinalia(t_struct *vals, t_booly *booh)
     {
       free(booh);
       tcgetattr(0, &t);
-      my_putstr("-------------CPU LOOSE------------\n");
+      my_putstr("-------------CPU LOST------------\n");
       tputs(vals->tget->endhide, 1, my_putchar);
       get_back(&t);
       exit(1);
