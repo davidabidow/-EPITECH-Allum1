@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Mon Feb 10 11:17:09 2014 david tran
-** Last update Tue Feb 11 13:39:20 2014 david tran
+** Last update Sun Feb 16 05:25:36 2014 david tran
 */
 
 #include "list.h"
@@ -21,9 +21,12 @@ void			checkwinsize(t_struct *vals)
     }
 }
 
-void			affturn(t_struct vals)
+void			affturn(t_struct vals, t_booly *booh)
 {
   tputs(tgoto(vals.tget->movecurs, 0, vals.argp.ws_row), 1, my_putchar);
+  tputs(vals.tget->delline, 1, my_putchar);
   my_putstr("TURN : ");
   my_put_nbr(vals.turn);
+  my_putstr(" - TOTAL: ");
+  my_put_nbr(checkfinal(vals, booh));
 }

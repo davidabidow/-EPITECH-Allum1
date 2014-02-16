@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Thu Feb  6 16:06:15 2014 david tran
-** Last update Sat Feb 15 22:01:29 2014 david tran
+** Last update Sun Feb 16 05:18:50 2014 david tran
 */
 
 #include "list.h"
@@ -125,7 +125,7 @@ void			iffinalia(t_struct *vals, t_booly *booh)
   struct termios	t;
 
   vals->turn++;
-  affturn(*vals);
+  affturn(*vals, booh);
   if (checkfinal(*vals, booh) == 0)
     {
       free(booh);

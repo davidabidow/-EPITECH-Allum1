@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Tue Feb  4 21:42:20 2014 david tran
-** Last update Sat Feb 15 21:51:55 2014 david tran
+** Last update Sun Feb 16 05:18:39 2014 david tran
 */
 
 #include "list.h"
@@ -66,7 +66,7 @@ void			makeread(t_struct vals, t_booly *booh)
   raw_mode(&t);
   j = 0;
   buffer = 0;
-  affturn(vals);
+  affturn(vals, booh);
   tputs(tgoto(vals.tget->movecurs, 0, 0), 1, my_putchar);
   while ((readed = read(0, &buffer, 4)) != 0)
     {

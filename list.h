@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Fri Jan 31 10:43:16 2014 david tran
-** Last update Sat Feb 15 21:52:03 2014 david tran
+** Last update Sun Feb 16 05:23:36 2014 david tran
 */
 
 #ifndef _LIST_H_
@@ -31,6 +31,7 @@ typedef struct		s_tget
   char			*revvid;
   char			*endrev;
   char			*endhide;
+  char			*delline;
 }			t_tget;
 
 typedef struct		s_struct
@@ -90,7 +91,7 @@ t_booly			*fillin(t_struct );
 void			refreshall(t_struct *, t_booly *, int *);
 void			fillstruct(t_struct *);
 void			checkwinsize(t_struct *);
-void			affturn(t_struct );
+void			affturn(t_struct , t_booly *);
 void			prefinalize(t_struct *, t_booly *, int , int );
 
 #endif /* !_LIST_H_ */

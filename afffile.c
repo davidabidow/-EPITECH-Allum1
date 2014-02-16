@@ -5,7 +5,7 @@
 ** Login   <tran_0@epitech.net>
 ** 
 ** Started on  Mon Feb  3 11:47:40 2014 david tran
-** Last update Sat Feb 15 21:51:48 2014 david tran
+** Last update Sun Feb 16 05:24:39 2014 david tran
 */
 
 #include "list.h"
@@ -44,14 +44,16 @@ void	fillstruct(t_struct *vals)
   vals->tget->revvid = tgetstr("so", NULL);
   vals->tget->endrev = tgetstr("se", NULL);
   vals->tget->endhide = tgetstr("ve", NULL);
+  vals->tget->delline = tgetstr("dl", NULL);
 }
 
 void	refreshall(t_struct *vals, t_booly *booh, int *j)
 {
+  vals->turn = 1;
   free(booh);
   booh = fillin(*vals);
   tputs(vals->tget->clears, 1, my_putchar);
   afffile(*vals, booh);
-  vals->turn = 0;
+  affturn(*vals, booh);
   *j = 0;
 }
